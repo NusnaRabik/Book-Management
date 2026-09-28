@@ -1,16 +1,15 @@
 import { NavLink } from 'react-router-dom';
 
 const navItems = [
-  { path: '/dashboard', label: 'Dashboard', icon: 'grid_view' },
-  { path: '/books', label: 'My Books', icon: 'auto_stories' },
-  { path: '/books/add', label: 'Add Book', icon: 'bookmark_add' },
+  { path: '/dashboard', label: 'Dashboard', icon: 'grid_view', end: true },
+  { path: '/books', label: 'My Books', icon: 'auto_stories', end: true },
+  { path: '/books/add', label: 'Add Book', icon: 'bookmark_add', end: true },
 ];
 
 export default function Sidebar() {
   return (
     <aside className="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between">
       <div className="flex flex-col">
-        {/* Logo */}
         <div className="h-16 px-space-lg flex items-center gap-space-sm">
           <img
             alt="Book Manager Logo"
@@ -27,18 +26,17 @@ export default function Sidebar() {
           </div>
         </div>
 
-        {/* Navigation */}
         <div className="px-space-md py-space-sm">
           <nav className="flex flex-col gap-space-xs">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
-                end={item.path === '/books'}
+                end={item.end}
                 className={({ isActive }) =>
                   `flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg transition-all ${
                     isActive
-                      ? 'bg-primary-container text-on-primary shadow-sm'
+                      ? 'bg-primary-container text-on-primary font-semibold shadow-sm'
                       : 'text-on-surface-variant hover:bg-surface-container hover:text-on-surface'
                   }`
                 }
@@ -61,7 +59,6 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* User Profile Footer */}
       <div className="p-space-md bg-surface-container-low">
         <div className="flex items-center justify-between gap-space-sm mb-space-sm">
           <div className="flex items-center gap-space-sm min-w-0">

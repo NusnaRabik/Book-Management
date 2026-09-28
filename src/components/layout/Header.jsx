@@ -1,7 +1,6 @@
 export default function Header() {
   return (
     <header className="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl">
-      {/* Search */}
       <div className="flex items-center gap-space-md">
         <div className="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-sm w-96">
           <span className="material-symbols-outlined text-outline text-[20px]">
@@ -15,7 +14,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Profile */}
       <div className="flex items-center gap-space-md">
         <div className="flex items-center gap-space-sm pl-space-sm">
           <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center">
